@@ -1,4 +1,4 @@
-name: Run Soul Workflow
+name: Run AbbyX Workflow
 
 on:
   push:
@@ -26,5 +26,5 @@ jobs:
         run: |
           pip install telebot pymongo aiohttp
 
-      - name: Run soul.py
-        run: python3 soul.py
+      - name: Run v.py
+        run: python3 v.py
